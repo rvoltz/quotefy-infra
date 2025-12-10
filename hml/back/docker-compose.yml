@@ -1,0 +1,71 @@
+services:
+  db:
+    image: postgres:15.4-alpine
+    env_file: [db.env]
+    deploy:
+      restart_policy:
+        condition: on-failure
+    secrets:
+      - DB_PASSWORD      
+    ports:
+      - target: 5432
+        published: 65432 # Porta publicada para o DB original
+        protocol: tcp
+        mode: host
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - quotefy-net
+
+  app:
+    image: ghcr.io/rvoltz/quotefy:3d38d39903a18ce76a91a3b302454cbadae989d7
+    env_file: [app.env]
+    depends_on:
+      - db # Depende do serviço de DB
+    deploy:
+      restart_policy:
+        condition: on-failure
+    secrets:
+      - DB_PASSWORD
+    ports:
+      - target: 8080
+        published: 62090
+        protocol: tcp
+        mode: host
+    environment:
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - quotefy-net
+
+  whatsapp-api:
+    image: ghcr.io/rvoltz/quotefy-whatsapp-api:2aabf1757465974ab08ef0cb7cc7f7d3c9f6e6cf
+    env_file: [whatsapp.env]
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - db
+    secrets:
+      - DB_PASSWORD
+      - WHATSAPP_API_KEY
+    ports:
+      - target: 3000
+        published: 63000
+        protocol: tcp
+        mode: host
+    networks:
+      - quotefy-net
+
+networks:
+  quotefy-net:
+    driver: overlay
+    attachable: true
+
+volumes:
+  db-data:
+
+secrets:
+  DB_PASSWORD:
+    external: true
+  WHATSAPP_API_KEY:
+    external: true
