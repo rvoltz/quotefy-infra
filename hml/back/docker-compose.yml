@@ -32,8 +32,6 @@ services:
         published: 62090
         protocol: tcp
         mode: host
-    environment:
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     networks:
       - quotefy-net
 
