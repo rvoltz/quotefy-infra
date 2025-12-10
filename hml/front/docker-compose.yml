@@ -11,8 +11,8 @@ services:
         protocol: tcp
         mode: host
     networks:
-      - quotefy-hml_quotefy-net
+      - quotefy-back-hml_quotefy-net
 
 networks:
-  quotefy-hml_quotefy-net:
+  quotefy-back-hml_quotefy-net:
     external: true
