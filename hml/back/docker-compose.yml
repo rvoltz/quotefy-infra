@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:15.4-alpine
+    image: ghcr.io/rvoltz/quotefy-front-app:281f840404f9112b4de679bb220757ae3aa3491c
     env_file: [db.env]
     deploy:
       restart_policy:
@@ -18,7 +18,7 @@ services:
       - quotefy-net
 
   app:
-    image: ghcr.io/rvoltz/quotefy:0ba7e6b8c89f09b4d0076f87a58f6dd4e21b7cf1
+    image: ghcr.io/rvoltz/quotefy-front-app:281f840404f9112b4de679bb220757ae3aa3491c
     env_file: [app.env]
     depends_on:
       - db # Depende do serviço de DB
@@ -36,7 +36,7 @@ services:
       - quotefy-net
 
   whatsapp-api:
-    image: ghcr.io/rvoltz/quotefy-whatsapp-api:44f7b8bb35f7fb88099862d567377b074a3385dc
+    image: ghcr.io/rvoltz/quotefy-front-app:281f840404f9112b4de679bb220757ae3aa3491c
     env_file: [whatsapp.env]
     deploy:
       restart_policy:
