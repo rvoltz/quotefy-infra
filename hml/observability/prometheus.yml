@@ -1,0 +1,6 @@
+scrape_configs:
+  - job_name: 'quotefy-backend-hml'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['app:8080'] # Aponta exatamente para o serviço 'app' do seu docker-compose do back
