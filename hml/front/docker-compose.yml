@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: ghcr.io/rvoltz/quotefy-front-app:ba1bf919d2ea2309b8216a8af51c155918ab6428
+    image: ghcr.io/rvoltz/quotefy-front-app:94362514d233062f5a7da7ddaea7d0fe4e977ef1
     env_file: [front.env]
     deploy:
       restart_policy:
