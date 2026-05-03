@@ -18,7 +18,7 @@ services:
       - quotefy-net
 
   app:
-    image: ghcr.io/rvoltz/quotefy:8cd3d4ca6a87f9152fd44ad61d96f0e1116a3f7e
+    image: ghcr.io/rvoltz/quotefy:24bb20830865a91f27cf68df1f6753feb7fe2326
     env_file: [app.env]
     depends_on:
       - db # Depende do serviço de DB
