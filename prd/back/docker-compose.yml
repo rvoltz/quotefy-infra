@@ -7,7 +7,7 @@ services:
       restart_policy:
         condition: on-failure
     secrets:
-      - source: PRD_DB_PASSWORD
+      - source: PRD_DB_PASSWORD_V2
         target: DB_PASSWORD
     ports:
       - target: 8080
@@ -24,7 +24,7 @@ services:
       restart_policy:
         condition: on-failure
     secrets:
-      - source: PRD_DB_PASSWORD
+      - source: PRD_DB_PASSWORD_V2
         target: DB_PASSWORD
       - source: PRD_WHATSAPP_API_KEY
         target: WHATSAPP_API_KEY
@@ -37,7 +37,7 @@ networks:
     attachable: true
 
 secrets:
-  PRD_DB_PASSWORD:
+  PRD_DB_PASSWORD_V2:
     external: true
   PRD_WHATSAPP_API_KEY:
     external: true
