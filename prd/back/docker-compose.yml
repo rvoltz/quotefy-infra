@@ -1,13 +1,14 @@
 services:
   app:
-    image: ghcr.io/rvoltz/quotefy:1259b1393f4d2f5639c346310f2531e2b33ecc50
+    image: ghcr.io/rvoltz/quotefy:1259b1393f4d2f5639c346310f2315e2b33ecc50
     env_file: [app.env]
     depends_on: []
     deploy:
       restart_policy:
         condition: on-failure
     secrets:
-      - PRD_DB_PASSWORD
+      - source: PRD_DB_PASSWORD
+        target: DB_PASSWORD
     ports:
       - target: 8080
         published: 62091
@@ -23,8 +24,10 @@ services:
       restart_policy:
         condition: on-failure
     secrets:
-      - PRD_DB_PASSWORD
-      - PRD_WHATSAPP_API_KEY
+      - source: PRD_DB_PASSWORD
+        target: DB_PASSWORD
+      - source: PRD_WHATSAPP_API_KEY
+        target: WHATSAPP_API_KEY
     networks:
       - quotefy-net
 
