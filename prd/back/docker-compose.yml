@@ -1,0 +1,40 @@
+services:
+  app:
+    image: ghcr.io/rvoltz/quotefy:1259b1393f4d2f5639c346310f2531e2b33ecc50
+    env_file: [app.env]
+    depends_on: []
+    deploy:
+      restart_policy:
+        condition: on-failure
+    secrets:
+      - DB_PASSWORD
+    ports:
+      - target: 8080
+        published: 62091
+        protocol: tcp
+        mode: host
+    networks:
+      - quotefy-net
+
+  whatsapp-api:
+    image: ghcr.io/rvoltz/quotefy-whatsapp-api:52e6a9737e1922ee22b72325f4eea88c2c2baca0
+    env_file: [whatsapp.env]
+    deploy:
+      restart_policy:
+        condition: on-failure
+    secrets:
+      - DB_PASSWORD
+      - WHATSAPP_API_KEY
+    networks:
+      - quotefy-net
+
+networks:
+  quotefy-net:
+    driver: overlay
+    attachable: true
+
+secrets:
+  DB_PASSWORD:
+    external: true
+  WHATSAPP_API_KEY:
+    external: true

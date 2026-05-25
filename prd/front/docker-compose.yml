@@ -1,0 +1,18 @@
+services:
+  frontend:
+    image: ghcr.io/rvoltz/quotefy-front-app:a35cb1d503e0c5ce92c49dec7577e697f1e663b1
+    env_file: [front.env]
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - target: 80
+        published: 62081
+        protocol: tcp
+        mode: host
+    networks:
+      - quotefy-back-prd_quotefy-net
+
+networks:
+  quotefy-back-prd_quotefy-net:
+    external: true
