@@ -9,6 +9,8 @@ services:
     secrets:
       - source: PRD_DB_PASSWORD_V2
         target: DB_PASSWORD
+      - source: PRD_ASAAS_ACCESS_TOKEN
+        target: ASAAS_ACCESS_TOKEN
     ports:
       - target: 8080
         published: 62091
@@ -40,4 +42,6 @@ secrets:
   PRD_DB_PASSWORD_V2:
     external: true
   PRD_WHATSAPP_API_KEY_V2:
+    external: true
+  PRD_ASAAS_ACCESS_TOKEN:
     external: true
