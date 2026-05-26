@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/rvoltz/quotefy:cd8a63fd383ddebe7d89e7f9ca00543f496e8a69
+    image: ghcr.io/rvoltz/quotefy:1259b1393f4d2f5639c346310f2315e2b33ecc50
     env_file: [app.env]
     depends_on: []
     deploy:
@@ -26,7 +26,7 @@ services:
     secrets:
       - source: PRD_DB_PASSWORD_V2
         target: DB_PASSWORD
-      - source: PRD_WHATSAPP_API_KEY
+      - source: PRD_WHATSAPP_API_KEY_V2
         target: WHATSAPP_API_KEY
     networks:
       - quotefy-net
@@ -39,5 +39,5 @@ networks:
 secrets:
   PRD_DB_PASSWORD_V2:
     external: true
-  PRD_WHATSAPP_API_KEY:
+  PRD_WHATSAPP_API_KEY_V2:
     external: true
