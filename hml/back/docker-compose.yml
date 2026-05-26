@@ -8,8 +8,6 @@ services:
     secrets:
       - source: DB_PASSWORD
         target: DB_PASSWORD
-      - source: HML_ASAAS_ACCESS_TOKEN
-        target: ASAAS_ACCESS_TOKEN
     ports:
       - target: 5432
         published: 65432 # Porta publicada para o DB original
@@ -29,7 +27,10 @@ services:
       restart_policy:
         condition: on-failure
     secrets:
-      - DB_PASSWORD
+      - source: DB_PASSWORD
+        target: DB_PASSWORD
+      - source: HML_ASAAS_ACCESS_TOKEN
+        target: ASAAS_ACCESS_TOKEN
     ports:
       - target: 8080
         published: 62090
