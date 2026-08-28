@@ -31,6 +31,10 @@ services:
         target: DB_PASSWORD
       - source: HML_ASAAS_ACCESS_TOKEN
         target: ASAAS_ACCESS_TOKEN
+      - source: HML_BREVO_API_KEY
+        target: BREVO_API_KEY
+      - source: HML_BREVO_WEBHOOK_SECRET
+        target: BREVO_WEBHOOK_SECRET
     ports:
       - target: 8080
         published: 62090
@@ -72,4 +76,8 @@ secrets:
   WHATSAPP_API_KEY:
     external: true
   HML_ASAAS_ACCESS_TOKEN:
+    external: true
+  HML_BREVO_API_KEY:
+    external: true
+  HML_BREVO_WEBHOOK_SECRET:
     external: true
