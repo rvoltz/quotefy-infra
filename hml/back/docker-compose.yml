@@ -31,10 +31,26 @@ services:
         target: DB_PASSWORD
       - source: HML_ASAAS_ACCESS_TOKEN
         target: ASAAS_ACCESS_TOKEN
+      - source: HML_ASAAS_WEBHOOK_SECRET
+        target: ASAAS_WEBHOOK_SECRET
       - source: HML_BREVO_API_KEY
         target: BREVO_API_KEY
       - source: HML_BREVO_WEBHOOK_SECRET
         target: BREVO_WEBHOOK_SECRET
+      - source: HML_JWT_SECRET
+        target: JWT_SECRET
+      - source: HML_STORAGE_ACCESS_KEY
+        target: STORAGE_ACCESS_KEY
+      - source: HML_STORAGE_SECRET_KEY
+        target: STORAGE_SECRET_KEY
+      - source: HML_LICENSE_PLATE_TOKEN
+        target: LICENSE_PLATE_TOKEN
+      - source: HML_TOGETHER_API_KEY
+        target: TOGETHER_API_KEY
+      - source: HML_GEMINI_API_KEY
+        target: GEMINI_API_KEY
+      - source: WHATSAPP_API_KEY
+        target: WHATSAPP_API_KEY
     ports:
       - target: 8080
         published: 62090
@@ -77,7 +93,21 @@ secrets:
     external: true
   HML_ASAAS_ACCESS_TOKEN:
     external: true
+  HML_ASAAS_WEBHOOK_SECRET:
+    external: true
   HML_BREVO_API_KEY:
     external: true
   HML_BREVO_WEBHOOK_SECRET:
+    external: true
+  HML_JWT_SECRET:
+    external: true
+  HML_STORAGE_ACCESS_KEY:
+    external: true
+  HML_STORAGE_SECRET_KEY:
+    external: true
+  HML_LICENSE_PLATE_TOKEN:
+    external: true
+  HML_TOGETHER_API_KEY:
+    external: true
+  HML_GEMINI_API_KEY:
     external: true

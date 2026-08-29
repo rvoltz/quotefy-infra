@@ -11,10 +11,26 @@ services:
         target: DB_PASSWORD
       - source: PRD_ASAAS_ACCESS_TOKEN
         target: ASAAS_ACCESS_TOKEN
+      - source: PRD_ASAAS_WEBHOOK_SECRET
+        target: ASAAS_WEBHOOK_SECRET
       - source: PRD_BREVO_API_KEY
         target: BREVO_API_KEY
       - source: PRD_BREVO_WEBHOOK_SECRET
         target: BREVO_WEBHOOK_SECRET
+      - source: PRD_JWT_SECRET
+        target: JWT_SECRET
+      - source: PRD_STORAGE_ACCESS_KEY
+        target: STORAGE_ACCESS_KEY
+      - source: PRD_STORAGE_SECRET_KEY
+        target: STORAGE_SECRET_KEY
+      - source: PRD_LICENSE_PLATE_TOKEN
+        target: LICENSE_PLATE_TOKEN
+      - source: PRD_TOGETHER_API_KEY
+        target: TOGETHER_API_KEY
+      - source: PRD_GEMINI_API_KEY
+        target: GEMINI_API_KEY
+      - source: PRD_WHATSAPP_API_KEY_V2
+        target: WHATSAPP_API_KEY
     ports:
       - target: 8080
         published: 62091
@@ -49,7 +65,21 @@ secrets:
     external: true
   PRD_ASAAS_ACCESS_TOKEN:
     external: true
+  PRD_ASAAS_WEBHOOK_SECRET:
+    external: true
   PRD_BREVO_API_KEY:
     external: true
   PRD_BREVO_WEBHOOK_SECRET:
+    external: true
+  PRD_JWT_SECRET:
+    external: true
+  PRD_STORAGE_ACCESS_KEY:
+    external: true
+  PRD_STORAGE_SECRET_KEY:
+    external: true
+  PRD_LICENSE_PLATE_TOKEN:
+    external: true
+  PRD_TOGETHER_API_KEY:
+    external: true
+  PRD_GEMINI_API_KEY:
     external: true
