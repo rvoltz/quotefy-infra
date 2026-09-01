@@ -7,7 +7,7 @@ services:
       restart_policy:
         condition: on-failure
     secrets:
-      - source: PRD_DB_PASSWORD_V2
+      - source: PRD_DB_PASSWORD_V3
         target: DB_PASSWORD
       - source: PRD_ASAAS_ACCESS_TOKEN
         target: ASAAS_ACCESS_TOKEN
@@ -46,7 +46,7 @@ services:
       restart_policy:
         condition: on-failure
     secrets:
-      - source: PRD_DB_PASSWORD_V2
+      - source: PRD_DB_PASSWORD_V3
         target: DB_PASSWORD
       - source: PRD_WHATSAPP_API_KEY_V2
         target: WHATSAPP_API_KEY
@@ -59,7 +59,7 @@ networks:
     attachable: true
 
 secrets:
-  PRD_DB_PASSWORD_V2:
+  PRD_DB_PASSWORD_V3:
     external: true
   PRD_WHATSAPP_API_KEY_V2:
     external: true
