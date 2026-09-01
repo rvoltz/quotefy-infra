@@ -17,11 +17,11 @@ services:
         target: BREVO_API_KEY
       - source: PRD_BREVO_WEBHOOK_SECRET
         target: BREVO_WEBHOOK_SECRET
-      - source: PRD_JWT_SECRET
+      - source: PRD_JWT_SECRET_V2
         target: JWT_SECRET
-      - source: PRD_STORAGE_ACCESS_KEY
+      - source: PRD_STORAGE_ACCESS_KEY_V2
         target: STORAGE_ACCESS_KEY
-      - source: PRD_STORAGE_SECRET_KEY
+      - source: PRD_STORAGE_SECRET_KEY_V2
         target: STORAGE_SECRET_KEY
       - source: PRD_LICENSE_PLATE_TOKEN
         target: LICENSE_PLATE_TOKEN
@@ -71,11 +71,11 @@ secrets:
     external: true
   PRD_BREVO_WEBHOOK_SECRET:
     external: true
-  PRD_JWT_SECRET:
+  PRD_JWT_SECRET_V2:
     external: true
-  PRD_STORAGE_ACCESS_KEY:
+  PRD_STORAGE_ACCESS_KEY_V2:
     external: true
-  PRD_STORAGE_SECRET_KEY:
+  PRD_STORAGE_SECRET_KEY_V2:
     external: true
   PRD_LICENSE_PLATE_TOKEN:
     external: true
