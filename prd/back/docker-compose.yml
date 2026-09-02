@@ -11,7 +11,7 @@ services:
         target: DB_PASSWORD
       - source: PRD_ASAAS_ACCESS_TOKEN
         target: ASAAS_ACCESS_TOKEN
-      - source: PRD_ASAAS_WEBHOOK_SECRET
+      - source: PRD_ASAAS_WEBHOOK_SECRET_V2
         target: ASAAS_WEBHOOK_SECRET
       - source: PRD_BREVO_API_KEY
         target: BREVO_API_KEY
@@ -65,7 +65,7 @@ secrets:
     external: true
   PRD_ASAAS_ACCESS_TOKEN:
     external: true
-  PRD_ASAAS_WEBHOOK_SECRET:
+  PRD_ASAAS_WEBHOOK_SECRET_V2:
     external: true
   PRD_BREVO_API_KEY:
     external: true
