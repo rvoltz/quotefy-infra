@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/rvoltz/quotefy:17b10155635bdec218a9d9549789718a1f16b31a
+    image: ghcr.io/rvoltz/quotefy:1466260c97a9283e38f4b0258451d241c9656b63
     env_file: [app.env]
     depends_on: []
     deploy:
