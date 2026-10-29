@@ -29,7 +29,7 @@ services:
         target: TOGETHER_API_KEY
       - source: PRD_GEMINI_API_KEY
         target: GEMINI_API_KEY
-      - source: PRD_WHATSAPP_API_KEY_V2
+      - source: PRD_WHATSAPP_API_KEY_V3
         target: WHATSAPP_API_KEY
     ports:
       - target: 8080
@@ -48,7 +48,7 @@ services:
     secrets:
       - source: PRD_DB_PASSWORD_V3
         target: DB_PASSWORD
-      - source: PRD_WHATSAPP_API_KEY_V2
+      - source: PRD_WHATSAPP_API_KEY_V3
         target: WHATSAPP_API_KEY
     networks:
       - quotefy-net
@@ -61,7 +61,7 @@ networks:
 secrets:
   PRD_DB_PASSWORD_V3:
     external: true
-  PRD_WHATSAPP_API_KEY_V2:
+  PRD_WHATSAPP_API_KEY_V3:
     external: true
   PRD_ASAAS_ACCESS_TOKEN:
     external: true
