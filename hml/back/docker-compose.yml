@@ -60,7 +60,7 @@ services:
       - quotefy-net
 
   whatsapp-api:
-    image: ghcr.io/rvoltz/quotefy-whatsapp-api:d5b6ec634b24c1f8a3a65ba9fe153d5497260d34
+    image: ghcr.io/rvoltz/quotefy-whatsapp-api:320d8847935fee34c05550c7b16cd6b5598cbc9b
     env_file: [whatsapp.env]
     deploy:
       restart_policy:
